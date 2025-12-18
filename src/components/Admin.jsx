@@ -99,6 +99,7 @@
 // export default Admin;
 
 import { useState } from "react";
+import { URL } from "../api";
 
 const Admin = () => {
   const [formData, setFormData] = useState({
@@ -123,7 +124,7 @@ const Admin = () => {
       image_url: formData.image
     };
 
-    await fetch("http://localhost:3000/products", {
+    await fetch(`${URL}/products`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product)

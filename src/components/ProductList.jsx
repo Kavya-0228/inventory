@@ -99,14 +99,14 @@
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
-
+import { URL } from "../api";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch(`${URL}/products`)
       .then(res => res.json())
       .then(data => {
         setProducts(data);
